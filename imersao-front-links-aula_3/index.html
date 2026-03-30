@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <button id="theme-toggle" onclick="toggleTheme()" style="position:absolute;top:1rem;right:1rem;z-index:10;background:none;border:none;font-size:2rem;cursor:pointer" aria-label="Alternar tema"></button>
+        <h1>Quem está assistindo?</h1>
+        <section aria-label="Perfis disponíveis">
+            <nav class="profiles">
+                <ul>
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="assets/holt.jpeg" alt="Personagem Holt da série Brooklyn Nine-Nine usando um terno cinza e gravata vermelha">
+                                <figcaption>Holt</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="assets/jake.jpeg" alt="Personagem Jake Peralta da série Brooklyn Nine-Nine usando camisa, gravata e uma coroa">
+                                <figcaption>Jake</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="assets/boyle.jpeg" alt="Personagem Boyle da série Brooklyn Nine-Nine usando um terno preto e óculos escuros">
+                                <figcaption>Boyle</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+    <script src="theme.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        // Armazena o perfil ativo no localStorage ao clicar
+        document.querySelectorAll('.profile').forEach(profile => {
+            profile.addEventListener('click', (e) => {
+                const img = profile.querySelector('img');
+                const nome = profile.querySelector('figcaption');
+                
+                if (img && nome) {
+                    localStorage.setItem('perfilAtivoImagem', img.src);
+                    localStorage.setItem('perfilAtivoNome', nome.textContent);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
