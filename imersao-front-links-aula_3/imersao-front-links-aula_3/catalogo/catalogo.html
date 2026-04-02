@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                alt="Netflix">
+            <nav>
+                <ul class="nav-links">
+                    <li>Início</li>
+                    <li>Séries</li>
+                    <li>Filmes</li>
+                    <li>Jogos</li>
+                    <li>Bombando</li>
+                    <li>Minha lista</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <i class="fas fa-search icon"></i>
+            <a href="../index.html" class="kids-link">Seu nome</a>
+            <div class="nav-notification">
+                <i class="fas fa-bell icon"></i>
+                <span class="notification-badge">42</span>
+            </div>
+            <a href="../index.html" class="profile-menu" style="text-decoration: none; color: inherit;">
+                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                    alt="Profile">
+                <i class="fas fa-caret-down icon" style="font-size: 14px; margin-left: 5px;"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero de destaque estilo Netflix -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <iframe
+                src="https://www.youtube.com/embed/GV3HUDMQ-F8?autoplay=1&mute=1&controls=0&loop=1&playlist=GV3HUDMQ-F8,iQGLFG3n-DY"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                class="hero-video">
+            </iframe>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>The Flash</h2>
+            <p>Barry Allen é atingido por um raio e ganha velocidade sobre-humana. Agora ele deve usar seus poderes para proteger Central City.</p>
+            <div class="hero-buttons">
+                <button class="btn-play">&#9658; Assistir</button>
+                <button class="btn-info">Mais informações</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sliders Container -->
+    <main class="sliders-container" id="main-content">
+        <!-- Javascript will inject the rows here -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="" target="_blank">Perguntas frequentes</a></li>
+                <li><a href="" target="_blank">Centro de ajuda</a></li>
+                <li><a href="/" target="_blank">Conta</a></li>
+                <li><a href="" target="_blank">Termos de uso</a></li>
+                <li><a href="" target="_blank">Privacidade</a></li>
+                <li><a href="" target="_blank">Preferências de cookies</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+        // Efeito de navbar ao scrollar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
